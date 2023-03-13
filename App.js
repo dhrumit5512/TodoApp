@@ -8,6 +8,8 @@ import {
   useColorScheme,
   View,
   FlatList,
+  TouchableOpacity,
+  TextInput,
 } from 'react-native';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
