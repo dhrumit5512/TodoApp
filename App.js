@@ -13,19 +13,20 @@ import {
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
 const App = () => {
-  
-  const isDarkMode = useColorScheme() === 'dark';
+  const renderList = ({ item }) => {
+    const backgroundColor = item.finished ? 'white' : 'white';
+    const color = item.finished ? '#DADADA' : 'black';
+
   return (
     <View style={styles.sectionContainer}>
       <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
+          key={item.id}
+          item={item}
+          onPress={() => completedItem(item.id)}
+          backgroundColor={backgroundColor}
+          textColor={color}
+          style={styles.listItem}
+      />
       <Text
         style={[
           styles.sectionDescription,
