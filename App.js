@@ -1,4 +1,4 @@
-import {React} from 'react';
+import {React, useEffect, useState} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -15,6 +15,9 @@ import {
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
 const App = () => {
+  const [todos, setTodos] = React.useState([]);
+  let newText = "";
+
   const renderList = ({ item }) => {
     const backgroundColor = item.finished ? 'white' : 'white';
     const color = item.finished ? '#DADADA' : 'black';
