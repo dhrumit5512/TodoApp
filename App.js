@@ -1,4 +1,4 @@
-import {React, Node} from 'react';
+import {React} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -7,6 +7,7 @@ import {
   Text,
   useColorScheme,
   View,
+  FlatList,
 } from 'react-native';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
