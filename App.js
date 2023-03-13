@@ -48,26 +48,13 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={todos}
+        renderItem={renderList}
+        keyExtractor={item => item.id}
+        ListHeaderComponent={Header}
       />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-         <Text>DEMO</Text>
-         <Todo
-         key='6'
-         todo='some text'
-         />
-        </View>
-      </ScrollView>
     </SafeAreaView>
   );
 };
