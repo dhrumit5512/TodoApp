@@ -52,6 +52,18 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+
+  const Header = () => {
+    return (
+      <>
+      <Text style={styles.heading}>To do list</Text>
+      <View style={styles.writingWrapper}>
+        <TextInput style={styles.input} placeholder={'Write a Todo...'} onChangeText={text => newText = text} />
+      </View>
+      </>
+    )
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
