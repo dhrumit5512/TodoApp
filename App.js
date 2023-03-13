@@ -18,7 +18,7 @@ const App = () => {
     const color = item.finished ? '#DADADA' : 'black';
 
   return (
-    <View style={styles.sectionContainer}>
+    <View style={styles.todo}>
       <Text
           key={item.id}
           item={item}
