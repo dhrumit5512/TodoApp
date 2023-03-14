@@ -55,6 +55,20 @@ const App = () => {
   );
 };
 
+const Item = ({ item, onPress, backgroundColor, textColor }) => (
+  <TouchableOpacity onPress={onPress} style={[styles.item, { backgroundColor }]}>
+    <Text style={[styles.title, { color: textColor }]}>{item.text}</Text>
+  </TouchableOpacity>
+);
+
+const addTodo = () => {
+  setTodos([...todos, { id: Date.now(), text: newText, finished: false }]); 
+};
+
+const handleDeleteTodo = (id) => {
+  setTodos(todos.filter((todo) => todo.id !== id));
+  console.log();
+};
 
   const Header = () => {
     return (
