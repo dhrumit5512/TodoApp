@@ -37,7 +37,7 @@ const App = () => {
 
   return (
     <View style={styles.todo}>
-      <Text
+      <Item
           key={item.id}
           item={item}
           onPress={() => completedItem(item.id)}
