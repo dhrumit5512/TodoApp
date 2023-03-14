@@ -76,6 +76,11 @@ const handleDeleteTodo = (id) => {
       <Text style={styles.heading}>To do list</Text>
       <View style={styles.writingWrapper}>
         <TextInput style={styles.input} placeholder={'Write a Todo...'} onChangeText={text => newText = text} />
+        <TouchableOpacity onPress={addTodo}>
+          <View style={styles.addWrapper}>
+            <Text style={styles.icon}>+</Text>
+          </View>
+        </TouchableOpacity>
       </View>
       </>
     )
