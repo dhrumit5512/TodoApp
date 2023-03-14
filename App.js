@@ -87,6 +87,22 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
   },
+  input: {
+    height: 40,
+    flex: 1,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
+  addWrapper: {
+    width: 40,
+    height: 40,
+    backgroundColor: '#FFF',
+    borderRadius: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+  },
 });
 
 export default App;
