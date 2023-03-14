@@ -125,12 +125,36 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
   },
+  writingWrapper: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 10,
+  },
+  icon: {
+    fontSize: 20,
+  },
+  todo: {
+    flexDirection: 'row',
+    marginHorizontal: 20,
+  },
   heading: {
     fontSize:40,
     color: 'black',
     textAlign:'center',
     fontWeight: 'bold',
-  }
+  },
+  deleteButton: {
+    backgroundColor: 'red',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+    color: 'white',
+  },
+  deleteText: {
+    color: 'white',
+  },
 });
 
 export default App;
