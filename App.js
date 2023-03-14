@@ -15,12 +15,15 @@ import {
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
 const App = () => {
+
   const [todos, setTodos] = React.useState([]);
   let newText = "";
 
   const renderList = ({ item }) => {
     const backgroundColor = item.finished ? 'white' : 'white';
     const color = item.finished ? '#DADADA' : 'black';
+
+  }
 
   return (
     <View style={styles.todo}>
@@ -32,15 +35,11 @@ const App = () => {
           textColor={color}
           style={styles.listItem}
       />
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+        <TouchableOpacity onPress={() => handleDeleteTodo(item.id)} style={styles.deleteButton}>
+          <View>
+            <Text style={styles.deleteText}>delete</Text>
+          </View>
+        </TouchableOpacity>
     </View>
   );
 };
