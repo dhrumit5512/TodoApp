@@ -1,4 +1,4 @@
-import {React, useEffect, useState, useRef, Button} from 'react';
+import React, { useEffect, useState, useRef, Button} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -25,7 +25,6 @@ const App = () => {
 
     const completedItem = id => { 
       console.log(id);
-
       const newTodos = todos.map(todo => {
         if (todo.id === id) {
           todo.finished = !todo.finished;
