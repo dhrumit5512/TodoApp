@@ -23,6 +23,15 @@ const App = () => {
     const backgroundColor = item.finished ? 'white' : 'white';
     const color = item.finished ? '#DADADA' : 'black';
 
+    const completedItem = id => { 
+      console.log(id);
+
+      const newTodos = todos.map(todo => {
+        if (todo.id === id) {
+          todo.finished = !todo.finished;
+        }
+        return todo;
+      });
   }
 
   return (
