@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, Button} from 'react';
+import React, { useEffect, useState, useRef, Button } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -24,7 +24,7 @@ const App = () => {
     const backgroundColor = item.finished ? 'white' : 'white';
     const color = item.finished ? '#DADADA' : 'black';
 
-    const completedItem = id => { 
+    const completedItem = id => {
       console.log(id);
       const newTodos = todos.map(todo => {
         if (todo.id === id) {
@@ -34,54 +34,54 @@ const App = () => {
       });
       console.log(newTodos);
       setTodos(newTodos);
-  }
+    }
 
-  return (
-    <View style={styles.todo}>
-      <Item
+    return (
+      <View style={styles.todo}>
+        <Item
           key={item.id}
           item={item}
           onPress={() => completedItem(item.id)}
           backgroundColor={backgroundColor}
           textColor={color}
           style={styles.listItem}
-      />
+        />
         <TouchableOpacity onPress={() => handleDeleteTodo(item.id)} style={styles.removeButton}>
           <View>
             <Text style={styles.deleteText}>Delete</Text>
           </View>
         </TouchableOpacity>
-    </View>
+      </View>
+    );
+  };
+
+  const Item = ({ item, onPress, backgroundColor, textColor }) => (
+    <TouchableOpacity onPress={onPress} style={[styles.item, { backgroundColor }]}>
+      <Text style={[styles.title, { color: textColor }]}>{item.text}</Text>
+    </TouchableOpacity>
   );
-};
 
-const Item = ({ item, onPress, backgroundColor, textColor }) => (
-  <TouchableOpacity onPress={onPress} style={[styles.item, { backgroundColor }]}>
-    <Text style={[styles.title, { color: textColor }]}>{item.text}</Text>
-  </TouchableOpacity>
-);
+  const addTodo = () => {
+    setTodos([...todos, { id: Date.now(), text: newText, finished: false }]);
+  };
 
-const addTodo = () => {
-  setTodos([...todos, { id: Date.now(), text: newText, finished: false }]); 
-};
-
-const handleDeleteTodo = (id) => {
-  setTodos(todos.filter((todo) => todo.id !== id));
-  console.log();
-};
+  const handleDeleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+    console.log();
+  };
 
   const Header = () => {
     return (
       <>
-      <Text style={styles.heading}>To Do List</Text>
-      <View style={styles.writingWrapper}>
-        <TextInput style={styles.input} placeholder={'Write a Todo...'} onChangeText={text => newText = text} />
-        <TouchableOpacity onPress={addTodo}>
-          <View style={styles.addWrapper}>
-            <Text style={styles.addList}>+</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
+        <Text style={styles.heading}>To Do List</Text>
+        <View style={styles.writingWrapper}>
+          <TextInput style={styles.addName} placeholder={'Write a Todo...'} onChangeText={text => newText = text} />
+          <TouchableOpacity onPress={addTodo}>
+            <View style={styles.addWrapper}>
+              <Text style={styles.addList}>+</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
       </>
     )
   }
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
   },
-  input: {
+  addName: {
     height: 40,
     flex: 1,
     margin: 12,
@@ -130,7 +130,6 @@ const styles = StyleSheet.create({
   },
   writingWrapper: {
     width: '100%',
-    flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 10,
@@ -147,7 +146,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     textIndent: 50,
     letterSpacing: 3,
-    textAlign:'center',
+    textAlign: 'center',
     fontWeight: 'bold',
     backgroundColor: 'gray',
   },
