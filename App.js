@@ -103,6 +103,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
   },
+  heading: {
+    fontSize:40,
+    color: 'black',
+    textAlign:'center',
+    fontWeight: 'bold',
+  }
 });
 
 export default App;
