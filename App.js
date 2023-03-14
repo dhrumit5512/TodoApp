@@ -14,6 +14,7 @@ import {
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
+
 const App = () => {
 
   const [todos, setTodos] = React.useState([]);
@@ -45,9 +46,9 @@ const App = () => {
           textColor={color}
           style={styles.listItem}
       />
-        <TouchableOpacity onPress={() => handleDeleteTodo(item.id)} style={styles.deleteButton}>
+        <TouchableOpacity onPress={() => handleDeleteTodo(item.id)} style={styles.removeButton}>
           <View>
-            <Text style={styles.deleteText}>delete</Text>
+            <Text style={styles.deleteText}>Delete</Text>
           </View>
         </TouchableOpacity>
     </View>
@@ -72,12 +73,12 @@ const handleDeleteTodo = (id) => {
   const Header = () => {
     return (
       <>
-      <Text style={styles.heading}>To do list</Text>
+      <Text style={styles.heading}>To Do List</Text>
       <View style={styles.writingWrapper}>
         <TextInput style={styles.input} placeholder={'Write a Todo...'} onChangeText={text => newText = text} />
         <TouchableOpacity onPress={addTodo}>
           <View style={styles.addWrapper}>
-            <Text style={styles.icon}>+</Text>
+            <Text style={styles.addList}>+</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -102,27 +103,30 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   item: {
-    padding: 20,
-    flex: 1,
+    padding: 10,
+    flex: 2,
   },
   title: {
-    fontSize: 32,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 15,
+    color: 'white',
+    fontSize: 20,
   },
   input: {
     height: 40,
     flex: 1,
     margin: 12,
-    borderWidth: 1,
+    borderWidth: 2,
     padding: 10,
   },
   addWrapper: {
     width: 40,
     height: 40,
     backgroundColor: '#FFF',
-    borderRadius: 60,
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
+    borderWidth: 2,
   },
   writingWrapper: {
     width: '100%',
@@ -131,24 +135,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
   },
-  icon: {
+  addList: {
     fontSize: 20,
   },
   todo: {
     flexDirection: 'row',
     marginHorizontal: 20,
+    margin: 10,
   },
   heading: {
-    fontSize:40,
-    color: 'black',
+    fontSize: 25,
+    textIndent: 50,
+    letterSpacing: 3,
     textAlign:'center',
     fontWeight: 'bold',
+    backgroundColor: 'gray',
   },
-  deleteButton: {
+  removeButton: {
     backgroundColor: 'red',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
+    padding: 15,
     color: 'white',
   },
   deleteText: {
